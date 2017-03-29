@@ -1,0 +1,56 @@
+@import 'normalize.css';    // normalize the browser to override defaults
+@import 'grid12.scss';      // simple bootstrap grid system
+@import 'mixins.scss';
+@import 'helpers.scss';     // shorthand helper css
+@import 'transitions.scss'; // transitions used with vue js transition component
+@import 'gradients.scss';   // gradients used ont he app
+
+// more specific css used throught the webapp
+* {
+  outline: none;
+  box-sizing: border-box;
+}
+body {
+  background: #f8f8f8;
+  color: black;
+  font-family: 'aileronultralight';
+}
+
+#todo-header {
+  font-size: 4em;
+  color: rgba(255,255,255, 0.75);
+  margin: 12px 0px 12px 0px;
+  font-weight: 100;
+}
+
+#todo-input::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+  color: rgba(255,255,255, 0.4);
+}
+#todo-input::-moz-placeholder { /* Firefox 19+ */
+  color: rgba(255,255,255, 0.4);
+}
+#todo-input:-ms-input-placeholder { /* IE 10+ */
+  color: rgba(255,255,255, 0.4);
+}
+#todo-input:-moz-placeholder { /* Firefox 18- */
+  color: rgba(255,255,255, 0.4);
+}
+
+#todo-item {
+  padding: 24px 24px 24px 75px;
+  background: white;
+  border-radius: 3px;
+  font-family: 'aileronthin';
+  font-size: 1.1em;
+  margin: 12px 0px;
+}
+
+#edit-textarea {
+  min-height: 30px;
+  width: 500px;
+  background: none;
+  border: none;
+  border-bottom: 1px solid white;
+  resize: none;
+  color: white;
+}

@@ -1,0 +1,164 @@
+/*
+  These helper methods are designed for quick developement by me. They are
+  abbreviations that I myself am used to. It would be best not to use this in
+  larger projects because they can get confuing to others. When im working alone
+  I like to use my set of helpers
+*/
+.light-font {
+  font-weight: 300;
+}
+// dimensions
+.f-w {
+  width: 100%;
+}
+.f-h {
+  height: 100%;
+}
+// stands for full-area
+.f-a {
+  width: 100%;
+  height: 100%;
+}
+
+.p-r {
+  position: relative;
+}
+.p-a {
+  position: absolute;
+}
+.p-f {
+  position: fixed;
+}
+
+.t-a-c {
+  text-align: center;
+}
+.t-a-l {
+  text-align: left;
+}
+.t-a-r {
+  text-align: right;
+}
+
+.t {
+  top: 0;
+}
+.b {
+  bottom: 0;
+}
+.l {
+  left: 0;
+}
+.r {
+  right: 0;
+}
+
+.d-i-b {
+  display: inline-block;
+}
+.d-b {
+  display: block;
+}
+.c-p {
+  cursor: pointer;
+}
+
+.o-h {
+  overflow: hidden;
+}
+.v-a-m {
+  vertical-align: middle;
+  display: inline-block;
+}
+.center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+.center-t {
+  position: absolute;
+  top: 0%;
+  left: 50%;
+  -webkit-transform: translate(-50%, 0%);
+  -moz-transform: translate(-50%, 0%);
+  -ms-transform: translate(-50%, 0%);
+  transform: translate(-50%, 0%);
+}
+.center-l {
+  position: absolute;
+  top: 50%;
+  left: 0%;
+  -webkit-transform: translate(-0%, -50%);
+  -moz-transform: translate(-0%, -50%);
+  -ms-transform: translate(-0%, -50%);
+  transform: translate(-0%, -50%);
+}
+.center-r {
+  position: absolute;
+  top: 50%;
+  right: 0%;
+  -webkit-transform: translate(-0%, -50%);
+  -moz-transform: translate(-0%, -50%);
+  -ms-transform: translate(-0%, -50%);
+  transform: translate(-0%, -50%);
+}
+.center-b {
+  position: absolute;
+  bottom: 0%;
+  left: 50%;
+  -webkit-transform: translate(-50%, 0%);
+  -moz-transform: translate(-50%, 0%);
+  -ms-transform: translate(-50%, 0%);
+  transform: translate(-50%, 0%);
+}
+
+.center-margins {
+  margin: 0 auto;
+}
+
+.circle {
+  border-radius: 50%;
+}
+
+.uncollapse-margins:before,
+.uncollapse-margins:after
+{
+    content: "\00a0"; /* No-break space character */
+    display: block;
+    overflow: hidden;
+    height: 0;
+}
+
+.f-bg {
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: 50% 50%;
+}
+.bold {
+  font-weight: bold;
+}
+/*
+  material design shadows
+*/
+.z-1 {
+  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+}
+.z-hover:hover {
+  box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+}
+.z-2 {
+  box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+}
+.z-3 {
+  box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+}
+.z-4 {
+  box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+}
+.z-5 {
+  box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
+}
