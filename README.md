@@ -31,10 +31,16 @@ All commands can also be found in the package.json scripts
 npm run dev:server
 ```
 
-2 Open another shell and run:
+2. Open another shell and run:
 
 ```
 npm run hot
+```
+
+3. Point the browser to:
+
+```
+http://localhost:8080/
 ```
 
 Now you have hot module replacement for both the server side bundle and client bundle. 
