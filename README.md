@@ -4,7 +4,7 @@ A todo app built in vue js to demonstrate server side rendering and client side 
 ![Alt Vue js todo app](http://i.imgur.com/CWI3nxW.png)
 
 ## Installation
-This application was built using `node v6.0.0` and `npm v3.10.9`.
+This application was built using `node v6.0.0` `npm v3.10.9` `vue v2.1.10`.
 
 1. Install the dependencies
 
