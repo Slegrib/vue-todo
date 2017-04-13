@@ -23,7 +23,6 @@
           <textarea ref="textarea" rows="1" id="edit-textarea" v-model="value"
             v-on:keydown.enter.prevent='attemptUpdate'></textarea>
         </div>
-        <div>
       </div>
 
     </div>
