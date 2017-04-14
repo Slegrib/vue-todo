@@ -1,11 +1,16 @@
 import EditTodo from './EditTodo/EditTodo.vue';
 
+/*
+  The todo item component that represents the todo items.
+*/
 export default {
   props: {
+    // the object that contains the information about the todo
     data: {
       type: Object,
       required: true,
     },
+    // index of the todo in the list
     index: {
       type: Number,
       required: true,
@@ -13,41 +18,55 @@ export default {
   },
   data() {
     return {
-      hover: false,
-      hoverComplete: false,
-      textHover: false,
-      destroyHover: false,
-      edit: false,
-      poop: '',
+      edit: false,          // is the todo item being edited?
+      hoverComplete: false, // is the user hovering over the checkmark?
+      destroyHover: false,  // is the user hovering over the destroy todo btn?
     };
   },
   methods: {
-    handleClick(e) {
-      // get the data value of the element that was clicked on
-      const targetData = e.target.getAttribute('data-destroy');
-      if (targetData !== 'true') {
-        const updatedTodo = {
-          id: this.data.id,
-          done: this.data.done,
-          description: this.data.description,
-        };
-        updatedTodo.done = !updatedTodo.done;
-        this.$store.dispatch('updateTodo', updatedTodo);
-      } else {
-        const deleteInfo = {
-          id: this.data.id,
-          index: this.index,
-        };
-        this.$store.dispatch('deleteTodo', deleteInfo);
-      }
+    /*
+      Handles when the user checks or unchecks a todo item and dispatches
+      the event to the api. The vuex store is updated when we recieve a response
+      from the server. See src/vuex/actions.js
+    */
+    handleDone() {
+      // create the updated todo object and set the done key to the opposite
+      const updatedTodo = {
+        id: this.data.id,
+        done: !this.data.done,
+        description: this.data.description,
+      };
+      // updatedTodo.done = !updatedTodo.done;
+      this.$store.dispatch('updateTodo', updatedTodo);
     },
+    /*
+      Handles when a user clicks the destroy todo button on the bottom right
+      hand corner of the todo item.
+    */
+    handleDestroy() {
+      const deleteInfo = {
+        id: this.data.id,
+        index: this.index,
+      };
+      this.$store.dispatch('deleteTodo', deleteInfo);
+    },
+    /*
+      Close the edit modal. This function is passed down to the edit-todo
+      component in order to communicate with the state of this component.
+    */
     closeEdit(e) {
+      // if there is no event that means we called this function internally.
+      // i.e. after a user submits an edit to the todo we want to close the modal
       if (!e) {
         this.edit = false;
       } else if (e.target.getAttribute('data-removeedit') === 'true') {
         this.edit = false;
       }
     },
+    /*
+      Update the description of the todo by creating a new object that represents
+      the new state of the todo and send it to the todo api
+    */
     updateDescription(newDescription) {
       const updatedTodo = {
         id: this.data.id,
@@ -58,51 +77,19 @@ export default {
     },
   },
   computed: {
-    // compute the inline styles of many of the elements on the page
-    ctn() {
-      return {
-        padding: '24px 24px 24px 75px',
-        background: this.destroyHover ? '#FFEBEE' : 'white',
-        borderRadius: '3px',
-        fontFamily: 'aileronthin',
-        fontSize: '1.1em',
-        margin: '12px 0px',
-      };
-    },
-    checkCircle() {
-      const borderColor = this.data.done ? '#43cea2' : 'rgba(0,0,0, 0.2)';
-      return {
-        border: `1px solid ${borderColor}`,
-        width: '40px',
-        height: '40px',
-      };
-    },
+    // computing the style of the checkmark is a little bit too much for css to handle
     checkmark() {
       let color = this.hoverComplete ? 'rgba(0,0,0,0.2)' : 'rgba(0,0,0,0)';
-      color = this.destroyHover && !this.data.done ? 'rgba(0,0,0,0)' : color;
+      // color = this.destroyHover && !this.data.done ? 'rgba(0,0,0,0)' : color;
       color = this.data.done ? '#43cea2' : color;
       return {
         fontSize: '1.7em',
         color,
       };
     },
-    destroy() {
-      return {
-        color: this.destroyHover ? '#F44336' : 'rgba(0,0,0,0.1)',
-        bottom: '5px',
-        right: '5px',
-      };
-    },
-    text() {
-      let color = this.data.done ? 'rgba(0,0,0,0.4)' : '#333';
-      color = this.textHover ? '#2196F3' : color;
-      return {
-        color,
-        textDecoration: this.data.done ? 'line-through' : 'none',
-      };
-    },
   },
   components: {
+    // the modal component used for editing the text of a todo
     'edit-todo': EditTodo,
   },
 };
