@@ -1,9 +1,7 @@
 import Todos from '../../components/Todos/Todos.vue';
 
 // this function would normally be used if
-const fetchInitialData = (store) => {
-  return store.dispatch('getTodos');
-};
+const fetchInitialData = store => store.dispatch('getTodos');
 
 export default {
   // if we had data stored on a database and we were not server side rendering

@@ -23,19 +23,6 @@ body {
   font-weight: 100;
 }
 
-#todo-input::-webkit-input-placeholder { /* Chrome/Opera/Safari */
-  color: rgba(255,255,255, 0.4);
-}
-#todo-input::-moz-placeholder { /* Firefox 19+ */
-  color: rgba(255,255,255, 0.4);
-}
-#todo-input:-ms-input-placeholder { /* IE 10+ */
-  color: rgba(255,255,255, 0.4);
-}
-#todo-input:-moz-placeholder { /* Firefox 18- */
-  color: rgba(255,255,255, 0.4);
-}
-
 #todo-item {
   padding: 24px 24px 24px 75px;
   background: white;

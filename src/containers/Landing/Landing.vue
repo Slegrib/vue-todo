@@ -3,7 +3,7 @@
     <div class="p-r" style="z-index: 2;">
       <todos ></todos>
     </div>
-    <div class="p-f f-a endless-river" style="z-index: 1; top: 0px;">
+    <div class="p-f f-a endless-river" style="z-index: 0; top: 0px;">
 
     </div>
   </div>

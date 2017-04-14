@@ -1,7 +1,6 @@
 <template>
-  <div class="p-f t l r b"
-    style="z-index: 10000;" @click="closeEdit">
-    <div class="p-f t l r b endless-river" data-removeedit="true" style="z-index: 1000;">
+  <div class="p-f t l r b" style="z-index: 10000;" @click="closeEdit">
+    <div class="p-f t l r b endless-river-modal" data-removeedit="true" style="z-index: 1000;">
 
       <i class="material-icons p-a c-p" data-removeedit="true"
         style="top: 12px; right: 12px; color: white; font-size: 2em;">&#xE14C;</i>

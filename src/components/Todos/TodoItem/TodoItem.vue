@@ -40,11 +40,11 @@
   .todo {
     padding: 24px 24px 24px 75px;
     background: white;
-    borderRadius: 3px;
-    fontFamily: 'aileronthin';
-    fontSize: 1.1em;
+    border-radius: 3px;
+    font-family: 'aileronthin';
+    font-size: 1.07em;
     margin: 12px 0px;
-    border-radius: 2px;
+    border-radius: 3px 20px 3px 20px;
     word-wrap: break-word;
   }
   .todo-destroy {
