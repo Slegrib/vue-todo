@@ -8,7 +8,7 @@ export default {
     'todo-item': TodoItem,
   },
   computed: {
-    // access the todos from the store using mapGetters
+    // map the todos from vuex
     ...mapGetters({
       todos: 'getTodos',
     }),

@@ -1,5 +1,9 @@
 import LoadingScreen from '../components/LoadingScreen/LoadingScreen.vue';
 
+/*
+  These are properties that are used on both the client and server side
+  application. Place tags in metaInfo to be used by vue meta.
+*/
 export default {
   // all titles will be injected into this template
   metaInfo: {
